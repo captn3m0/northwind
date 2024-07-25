@@ -5,21 +5,24 @@ exclude:
 plugins:
   - jekyll_sqlite
   - jekyll-datapage-generator
+default:
+  - scope: 
+      type: product
+    values:
+      PLEASE: HELLO
 page_gen:
 - data: products
   template: product
-  debug: true
   page_data_prefix: product
   title: ProductName
-  index_files: false
   name: ProductID
+  extension: html
 - data: customers
   template: customer
-  debug: true
   page_data_prefix: customer
   title: CompanyName
-  index_files: false
   name: CustomerID
+  extension: html
 sqlite:
   - data: orders
     file: &db "_db/northwind.db"
