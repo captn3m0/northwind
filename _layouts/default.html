@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="keywords" content="northwind, sample, jekyll-sqlite, jekyll"/>
+    <meta name="description" content="{{page.description | default: site.description}}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.8.0.min.css">
+    <title>{{page.title | default: site.title}}</title>
+    <link rel="icon" type="image/png" href="./tacit_logo.png"/>
+  </head>
+  <body>
+    <section>
+      <header>
+        <nav>
+          <ul>
+            <li><a href="/">northwind</a></li>
+            <li><a href="/products.html">products</a></li>
+            <li><a href="/restock.html">running-out</a></li>
+            <li><a href="/categories.html">categories</a></li>
+            
+            <li><a href="/customers.html">customers</a></li>
+          </ul>
+        </nav>
+      </header>
+      <article>
+        {{content}}
+      </article>
+      <footer>
+        <nav>
+          <ul>
+            <li>
+              <small>Made by <a href="https://captnemo.in">@captn3m0</a> as a demo for 
+                <a href="https://github.com/captn3m0/jekyll-sqlite">
+                <tt>jekyll-sqlite</tt>
+              </a>
+                 plugin</small>
+            </li>
+          </ul>
+        </nav>
+      </footer>
+    </section>
+  </body>
+</html>

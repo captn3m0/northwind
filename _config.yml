@@ -1,0 +1,50 @@
+exclude:
+  - _db
+  - _plugins
+  - .gitignore
+plugins:
+  - jekyll_sqlite
+  - jekyll-datapage-generator
+page_gen:
+- data: products
+  template: product
+  debug: true
+  page_data_prefix: product
+  title: ProductName
+  index_files: false
+  name: ProductID
+- data: customers
+  template: customer
+  debug: true
+  page_data_prefix: customer
+  title: CompanyName
+  index_files: false
+  name: CustomerID
+sqlite:
+  - data: orders
+    file: &db "_db/northwind.db"
+    query: SELECT * from Orders
+
+  - data: customers
+    file: *db
+    query: SELECT * from Customers
+  
+  - data: employeeOfTheMonth
+    file: *db
+    query: SELECT * FROM Employees WHERE EmployeeID = 3
+  
+  - data: products
+    file: *db
+    query: SELECT * from Products
+
+  - data: categories
+    file: *db
+    query: SELECT CategoryID, CategoryName, Description FROM Categories
+
+  - data: categories.products
+    file: *db
+    query: SELECT ProductID,  ProductName ,CategoryID FROM Products WHERE Products.CategoryID=:CategoryID
+
+  - data: featured.product
+    file: *db
+    query: SELECT * FROM Products WHERE ProductID = :ID
