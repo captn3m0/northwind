@@ -5,4 +5,4 @@ gem "jekyll", "~> 4.4"
 gem "jekyll-sqlite", "~> 0.1.4"
 gem "jekyll-datapage-generator", "~> 1.4"
 
-gem "logger", "~> 1.6"
+gem "logger", "~> 1.7"
