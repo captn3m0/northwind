@@ -51,3 +51,21 @@ sqlite:
   - data: featured.product
     file: *db
     query: SELECT * FROM Products WHERE ProductID = :ID
+
+  - data: regions
+    file: *db
+    query: SELECT RegionID, RegionDescription FROM Regions ORDER BY RegionID
+  
+  - data: regions.territories
+    file: *db
+    query: |
+      SELECT TerritoryID, TerritoryDescription FROM Territories 
+      WHERE RegionID = :RegionID
+      ORDER BY TerritoryDescription
+  
+  - data: regions.territories.employees
+    file: *db
+    query: |
+      SELECT T.EmployeeID as EmployeeID, FirstName,LastName FROM EmployeeTerritories T,Employees
+      WHERE T.TerritoryID = :TerritoryID
+      AND T.EmployeeID = Employees.EmployeeID
