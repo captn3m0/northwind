@@ -1,14 +1,15 @@
 ---
 layout: default
+fields: ["CustomerID","CompanyName","ContactName","ContactTitle","Address","City","Region","PostalCode","Country","Phone","Fax"]
 ---
 
 <h1>{{page.customer.CompanyName}}</h1>
 
 <table>
-	{% for k in page.customer %}
+	{% for k in page.fields %}
 	<tr>
-		<th>{{k[0]}}</th>
-		<td>{{k[1]}}</td>
+		<th>{{k}}</th>
+		<td>{{page[k]}}</td>
 	</tr>
 	{% endfor %}
 </table>

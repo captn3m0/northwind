@@ -19,7 +19,6 @@ page_gen:
   extension: html
 - data: customers
   template: customer
-  page_data_prefix: customer
   title: CompanyName
   name: CustomerID
   extension: html
@@ -30,7 +29,7 @@ sqlite:
 
   - data: customers
     file: *db
-    query: SELECT * from Customers
+    query: SELECT CustomerID,CompanyName,ContactName,ContactTitle,Address,City,Region,PostalCode,Country,Phone,Fax, CONCAT("/customers/", Country,  "/", CustomerID, "/") as permalink from Customers
   
   - data: employeeOfTheMonth
     file: *db
