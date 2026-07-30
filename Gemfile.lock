@@ -75,7 +75,7 @@ GEM
     jekyll-datapage-generator (1.4.0)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
-    jekyll-sqlite (0.2.1)
+    jekyll-sqlite (0.4.0)
       sqlite3 (~> 2.9.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
@@ -150,7 +150,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 4.4)
   jekyll-datapage-generator (~> 1.4)
-  jekyll-sqlite (~> 0.2)
+  jekyll-sqlite (~> 0.4)
 
 BUNDLED WITH
    2.7.2
